@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".accueil.FaqActivity" >
+
+
+    <ImageView
+        android:id="@+id/fontHaut"
+        android:layout_width="412dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="-70dp"
+        android:contentDescription="@string/font_haut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hautappli"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/image_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/microsoftteams_image" />
+
+    <TextView
+        android:id="@+id/faq"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/mada_bold"
+        android:text="@string/f_a_q"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titreFaq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/mada_medium"
+        android:text="@string/les_questions_fr_quemment_pos_es"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <TextView
+        android:id="@+id/question1"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:background="#C4C4C4"
+        android:fontFamily="@font/mada_medium"
+        android:gravity="center_vertical"
+        android:text="@string/comment_puis_je_demander_une_facture"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titreFaq" />
+
+    <TextView
+        android:id="@+id/question2"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="4dp"
+        android:background="#C4C4C4"
+        android:fontFamily="@font/mada_medium"
+        android:gravity="center_vertical"
+        android:text="@string/les_repas_sont_ils_compris_dans_ma_r_servation"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repQuestion1" />
+
+    <TextView
+        android:id="@+id/question3"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="4dp"
+        android:background="#C4C4C4"
+        android:fontFamily="@font/mada_medium"
+        android:gravity="center_vertical"
+        android:text="@string/si_je_dois_annuler_ma_r_servation_dois_je_payer_des_frais_suppl_mentaires"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repQuestion2" />
+
+    <TextView
+        android:id="@+id/repQuestion1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="#F4F2F2"
+        android:fontFamily="@font/mada"
+        android:text="@string/vous_pouvez_avoir_acc_s_votre_facture_en_vous_rendant_sur_votre_compte_puis_ma_facture_celle_ci_peut_aussi_vous_tre_envoy_e_par_mail_sur_demande_la_r_ception"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question1" />
+
+    <TextView
+        android:id="@+id/repQuestion2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="#F4F2F2"
+        android:fontFamily="@font/mada"
+        android:text="@string/votre_e_mail_de_confirmation_pr_cise_si_les_repas_sont_compris_ou_non_dans_votre_r_servation_il_est_possible_d_ajouter_un_repas_votre_arriv_e_en_fonction_de_l_tablissement_contactez_directement_l_tablissement_1_2_jours_avant_votre_s_jour_pour_en_savoir_plus"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question2" />
+
+    <TextView
+        android:id="@+id/repQuestion3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="#F4F2F2"
+        android:fontFamily="@font/mada"
+        android:text="@string/votre_e_mail_de_confirmation_pr_cise_si_les_repas_sont_compris_ou_non_dans_votre_r_servation_il_est_possible_d_ajouter_un_repas_votre_arriv_e_en_fonction_de_l_tablissement_contactez_directement_l_tablissement_1_2_jours_avant_votre_s_jour_pour_en_savoir_plus2"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question3" />
+    <ImageView
+        android:id="@+id/rectangleTb"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/rectangle" />
+
+    <ImageView
+        android:id="@+id/bell"
+        android:layout_width="24dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rectangleTb"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/bell_solid" />
+
+    <ImageView
+        android:id="@+id/bag"
+        android:layout_width="29dp"
+        android:layout_height="24dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleTb"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/cart_flatbed_suitcase_solid" />
+
+    <ImageView
+        android:id="@+id/house"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleTb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/house_solid" />
+
+    <ImageView
+        android:id="@+id/user"
+        android:layout_width="21dp"
+        android:layout_height="24dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleTb"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="@+id/rectangleTb"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/user_solid" />
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="32dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleTb"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/rectangleTb"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/bars_solid" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

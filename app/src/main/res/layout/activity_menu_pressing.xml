@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".services.MenuPressingActivity">
+
+    <ImageView
+        android:id="@+id/fontHaut"
+        android:layout_width="412dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="-70dp"
+        android:contentDescription="@string/font_haut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hautappli"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/accueilView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:fontFamily="@font/mada_bold"
+        android:text="@string/mes_services5"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/microsoftteams_image"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/pressingTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/mada_bold"
+        android:text="@string/pressing"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fontHaut" />
+
+    <TextView
+        android:id="@+id/type1Pressing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/mada_medium"
+        android:text="@string/costume_2_pi_ces"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pressingTxt" />
+
+    <TextView
+        android:id="@+id/prixType1Pressing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="68dp"
+        android:fontFamily="@font/mada_medium"
+        android:text="@string/_16"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/type1Pressing"
+        app:layout_constraintEnd_toStartOf="@+id/checkBoxPressingType1"
+        app:layout_constraintTop_toTopOf="@+id/type1Pressing"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/prixType2Pressing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="68dp"
+        android:fontFamily="@font/mada_medium"
+        android:text="@string/_13"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/type2Pressing"
+        app:layout_constraintEnd_toStartOf="@+id/checkBoxPressingType2"
+        app:layout_constraintTop_toTopOf="@+id/type2Pressing"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/type2Pressing"
+        android:layout_width="127dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/mada_medium"
+        android:text="@string/robe_courte_simple"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type1Pressing" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPressingType1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/type1Pressing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/type1Pressing"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPressingType2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/type2Pressing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/type2Pressing" />
+
+    <TextView
+        android:id="@+id/recapitulatifTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/mada_bold"
+        android:text="@string/r_capitulatif"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type2Pressing" />
+
+    <TextView
+        android:id="@+id/totalTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/mada_bold"
+        android:text="@string/total"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/prixTotalPressing"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type" />
+
+    <TextView
+        android:id="@+id/quantite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/mada_medium"
+        android:text="@string/quantit"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/type"
+        app:layout_constraintHorizontal_bias="0.775"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recapitulatifTxt" />
+
+    <TextView
+        android:id="@+id/prix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="96dp"
+        android:fontFamily="@font/mada_medium"
+        android:text="@string/prix"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recapitulatifTxt" />
+
+    <TextView
+        android:id="@+id/prixTotalPressing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="152dp"
+        android:fontFamily="@font/mada_bold"
+        android:text="@string/prix"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prix" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="124dp"
+        android:fontFamily="@font/mada_medium"
+        android:text="@string/type"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/prix"
+        app:layout_constraintTop_toBottomOf="@+id/recapitulatifTxt" />
+
+    <Button
+        android:id="@+id/validationCommandePressing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/valider_ma_commande"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalTxt"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/texteInformationPressing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mada_bold"
+        android:text="@string/une_fois_votre_commande_valid_e_veuillez_d_poser_vos_articles_au_pressing_de_l_h_tel"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/validationCommandePressing" />
+    <ImageView
+        android:id="@+id/rectangleTb"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/rectangle" />
+
+    <ImageView
+        android:id="@+id/bell"
+        android:layout_width="24dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rectangleTb"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/bell_solid" />
+
+    <ImageView
+        android:id="@+id/bag"
+        android:layout_width="29dp"
+        android:layout_height="24dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleTb"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/cart_flatbed_suitcase_solid" />
+
+    <ImageView
+        android:id="@+id/house"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleTb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/house_solid" />
+
+    <ImageView
+        android:id="@+id/user"
+        android:layout_width="21dp"
+        android:layout_height="24dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleTb"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="@+id/rectangleTb"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/user_solid" />
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="32dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleTb"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/rectangleTb"
+        app:layout_constraintTop_toTopOf="@+id/rectangleTb"
+        app:srcCompat="@drawable/bars_solid" />
+</androidx.constraintlayout.widget.ConstraintLayout>

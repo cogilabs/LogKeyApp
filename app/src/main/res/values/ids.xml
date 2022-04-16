@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="accueilBtn" type="id" />
+    <item name="pinMap" type="id" />
+    <item name="imageChambrePhoto" type="id" />
+    <item name="divider3" type="id" />
+    <item name="maReservationView" type="id" />
+    <item name="titrePageReservation" type="id" />
+    <item name="arriveeView" type="id" />
+    <item name="divider2" type="id" />
+</resources>

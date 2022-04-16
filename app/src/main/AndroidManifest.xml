@@ -2,22 +2,123 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.logkey.logkeyapp">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="LogKeyAPP"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LogKeyApp">
+
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".accueil.MaChambreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".moncompte.MesCommandesTermineesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".moncompte.MesCommandesEnCoursActivity"
+            android:exported="false" />
+        <activity
+            android:name=".moncompte.MaFactureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".moncompte.MesMoyensDePaiementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".moncompte.DocumentsDeVoyageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".moncompte.InformationsPersonnellesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".services.MenuTaxiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".services.MenuPressingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".services.MenuRoomServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".accueil.MesServicesMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".restaurant.MenuRestaurantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".restaurant.MenuPetitDejActivity"
+            android:exported="false" />
+        <activity
+            android:name=".restaurant.MenuBarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".accueil.RestaurationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".accueil.NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".accueil.MonCompteActivity"
+            android:exported="false" />
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD8Qq8eqhrIGHKX-z5T4Wvk86z9lL36Xu4" />
+        <activity
+            android:name=".accueil.MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
+
+        <activity
+            android:name=".accueil.FaqActivity"
+            android:exported="false" />
+        <activity
+            android:name=".accueil.AccueilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OpeningLockerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".accueil.MaReservationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BluetoothActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
