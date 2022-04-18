@@ -46,15 +46,16 @@
 
     <TextView
         android:id="@+id/pressingTxt"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/mada_bold"
         android:text="@string/pressing"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fontHaut" />
 
@@ -216,8 +217,9 @@
         android:id="@+id/validationCommandePressing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="@string/valider_ma_commande"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -226,17 +228,20 @@
 
     <TextView
         android:id="@+id/texteInformationPressing"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/mada_bold"
         android:text="@string/une_fois_votre_commande_valid_e_veuillez_d_poser_vos_articles_au_pressing_de_l_h_tel"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/rectangleTb"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/validationCommandePressing" />
+        app:layout_constraintTop_toBottomOf="@+id/validationCommandePressing"
+        app:layout_constraintVertical_bias="0.28" />
+
     <ImageView
         android:id="@+id/rectangleTb"
         android:layout_width="0dp"
