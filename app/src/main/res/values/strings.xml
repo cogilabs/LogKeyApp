@@ -146,6 +146,11 @@
     <string name="closeMsg">Fermez le locker après avoir récupéré la clé</string>
     <string name="okButton">OK</string>
     <string name="bienvenue_sur_key">Bienvenue sur KEY</string>
+    <string name="connexion">Connexion</string>
+    <string name="connectez_vous">Connectez-vous pour accéder à votre espace</string>
+    <string name="bienvenue_sur">Bienvenue sur LOG\'KEY</string>
+    <string name="arriereplanaccueil">arrierePlanAccueil</string>
+    <string name="logoaccueil">logoAccueil</string>
 
 </resources>
 
