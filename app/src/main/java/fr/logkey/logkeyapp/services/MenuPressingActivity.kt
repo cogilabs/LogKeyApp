@@ -26,6 +26,7 @@ class MenuPressingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu_pressing)
         boutonValidationCommandePressing = findViewById(R.id.validationCommandePressing)
 
+
         boutonValidationCommandePressing.setOnClickListener {
             Toast.makeText(applicationContext,"Votre commande a été validée.", Toast.LENGTH_SHORT).show()
         }
