@@ -8,9 +8,9 @@
 
     <ScrollView
         android:id="@+id/scroll_restauration"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/rectangleTb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,12 +28,12 @@
                 android:id="@+id/restaurant_img"
                 android:layout_width="419dp"
                 android:layout_height="341dp"
+                android:contentDescription="@string/todo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/restaurant"
-                android:contentDescription="@string/todo" />
+                app:srcCompat="@drawable/restaurant" />
 
             <Button
                 android:id="@+id/icone_menuRestaurant"
@@ -50,19 +50,20 @@
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
                 app:rippleColor="#FFFFFF"
-                app:strokeColor="#FFF9F9" />
+                app:strokeColor="#FFF9F9"
+                tools:ignore="TextContrastCheck" />
 
             <ImageView
                 android:id="@+id/petitDej_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:contentDescription="@string/todo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/restaurant_img"
-                app:srcCompat="@drawable/petit_dej"
-                android:contentDescription="@string/todo" />
+                app:srcCompat="@drawable/petit_dej" />
 
             <Button
                 android:id="@+id/icone_menuPetitDej"
@@ -86,12 +87,12 @@
                 android:id="@+id/bar_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/petitDej_img"
-                app:srcCompat="@drawable/bar"
-                android:contentDescription="@string/todo" />
+                app:srcCompat="@drawable/bar" />
 
             <Button
                 android:id="@+id/icone_menuBar"

@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".services.MenuTaxiActivity">
+
     <TextView
         android:id="@+id/taxiTxt"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/mada_bold"
         android:text="@string/taxi"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,31 +23,34 @@
 
     <TextView
         android:id="@+id/appelerUnTaxi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="104dp"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/mada_bold"
         android:text="@string/appeler_un_taxi"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taxiTxt" />
 
     <TextView
         android:id="@+id/taxiInformation"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_marginBottom="280dp"
         android:fontFamily="@font/mada_medium"
         android:text="@string/payez_directement_votre_course_au_taxi"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rectangleTb"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appelerUnTaxi"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/fontHaut"
@@ -79,23 +84,27 @@
         android:layout_width="100dp"
         android:layout_height="72dp"
         android:layout_marginTop="40dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/microsoftteams_image"
-        android:contentDescription="@string/todo" />
+        tools:ignore="ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/icone_telephone"
-        android:layout_width="63dp"
-        android:layout_height="69dp"
-        android:layout_marginEnd="92dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toBottomOf="@+id/appelerUnTaxi"
+        app:layout_constraintBottom_toTopOf="@+id/taxiInformation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appelerUnTaxi"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appelerUnTaxi"
+        app:layout_constraintVertical_bias="0.12"
         app:srcCompat="@drawable/icone_telephone"
         tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+
     <ImageView
         android:id="@+id/rectangleTb"
         android:layout_width="0dp"
