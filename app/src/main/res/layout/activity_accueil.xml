@@ -8,7 +8,6 @@
     tools:context=".accueil.AccueilActivity">
 
 
-
     <ImageView
         android:id="@+id/fontHaut"
         android:layout_width="412dp"
@@ -16,7 +15,7 @@
         android:layout_marginTop="-70dp"
         android:contentDescription="@string/font_haut"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hautappli" />
