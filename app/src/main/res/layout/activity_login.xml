@@ -14,6 +14,7 @@
         android:id="@+id/imageView5"
         android:layout_width="443dp"
         android:layout_height="355dp"
+        android:contentDescription="@string/arriereplanaccueil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +26,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="155dp"
+        android:contentDescription="@string/logoaccueil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -59,7 +61,9 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="@+id/WhiteSquare2"
         app:layout_constraintStart_toStartOf="@+id/WhiteSquare2"
-        app:layout_constraintTop_toTopOf="@+id/WhiteSquare2" />
+        app:layout_constraintTop_toTopOf="@+id/WhiteSquare2"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/password"
@@ -75,7 +79,9 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="@+id/WhiteSquare2"
         app:layout_constraintStart_toStartOf="@+id/WhiteSquare2"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/login"
@@ -112,60 +118,46 @@
 
 
     <TextView
-        android:id="@+id/textEspacePerso"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/mada_black"
-        android:text="@string/bienvenue_sur_key"
-        android:textAlignment="center"
-        android:textColor="#171414"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textConnex2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/mada_black"
-        android:text="LOG'"
-        android:textColor="#D1B78F"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textConnex1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/mada_black"
-        android:text="Connectez-vous pour accéder à votre espace"
+        android:text="@string/connectez_vous"
         android:textAlignment="center"
         android:textColor="#100E0E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEspacePerso" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/connexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/mada_semibold"
-        android:text="Connexion"
+        android:text="@string/connexion"
         android:textColor="#191616"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/WhiteSquare2"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/WhiteSquare2"
         app:layout_constraintTop_toTopOf="@+id/WhiteSquare2" />
+
+    <TextView
+        android:id="@+id/textAcc1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mada_black"
+        android:text="@string/bienvenue_sur"
+        android:textColor="#070606"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/textConnex1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.486" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
