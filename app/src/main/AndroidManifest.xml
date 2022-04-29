@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LogKeyApp">
-
+        <activity
+            android:name=".MenuHambActivity"
+            android:exported="false" />
         <activity
             android:name=".accueil.MaChambreActivity"
             android:exported="false" />
@@ -64,7 +66,6 @@
         <activity
             android:name=".accueil.MonCompteActivity"
             android:exported="false" />
-
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -79,11 +80,11 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD8Qq8eqhrIGHKX-z5T4Wvk86z9lL36Xu4" />
+
         <activity
             android:name=".accueil.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
-
         <activity
             android:name=".accueil.FaqActivity"
             android:exported="false" />

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import fr.logkey.logkeyapp.MenuHambActivity
 import fr.logkey.logkeyapp.R
 
 class AccueilActivity : AppCompatActivity() {
@@ -97,7 +98,7 @@ class AccueilActivity : AppCompatActivity() {
             startActivity(intent4)
         }
 
-        val intent5 = Intent(this,NotificationsActivity::class.java)
+        val intent5 = Intent(this, MenuHambActivity::class.java)
         menuButton.setOnClickListener {
             startActivity(intent5)
         }
