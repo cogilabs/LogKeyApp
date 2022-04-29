@@ -172,4 +172,20 @@
     <string name="ble_characteristic_read">LECTURE</string>
     <string name="ble_characterisitc_write">ECRITURE</string>
 
+    <string name="play">play</string>
+    <string name="ble_device_status_connecting">Statut : connexion</string>
+    <string name="ble_device_status_disconnecting">statut : déconnexion</string>
+    <string name="ble_device_write_characteristic_title">ecrire la valeur</string>
+    <string name="ble_device_write_characteristic_confirm">confirmer</string>
+    <string name="ble_device_write_characteristic_cancel">annuler</string>
+    <string name="lecture">lecture</string>
+    <string name="ble_scan_play">Lancer le scan BLE</string>
+    <string name="ble_scan_pause">Scan BLE en cours _</string>
+    <string name="ble_scan_device_error">BLE non disponible sur cet appareil</string>
+    <string name="ble_device_disconnected">Statut : déconnecté</string>
+    <string name="ble_device_connected">Statut : connecté</string>
+    <string name="ble_device_characteristic_read" />
+    <string name="ble_characteristic_read">LECTURE</string>
+    <string name="ble_characterisitc_write">ECRITURE</string>
+
 </resources>
