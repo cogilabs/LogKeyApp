@@ -151,9 +151,6 @@
     <string name="bienvenue_sur">Bienvenue sur LOG\'KEY</string>
     <string name="arriereplanaccueil">arrierePlanAccueil</string>
     <string name="logoaccueil">logoAccueil</string>
-    <string name="param">Paramètres</string>
-    <string name="mentionsLegales">Mentions Légales</string>
-    <string name="deconnexion">Déconnexion</string>
-    <string name="titleMenu">LOG\'KEY</string>
 
 </resources>
+
