@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import fr.logkey.logkeyapp.ble.BluetoothActivity
 
 lateinit var paramButton : TextView
 lateinit var contactButton : TextView
@@ -21,7 +22,7 @@ class MenuHambActivity : AppCompatActivity() {
         //   mentionButton = findViewById(R.id.mentionsLeg)
         //   deconnexionButton = findViewById(R.id.deconnexion)
 
-        val paramIntent = Intent(this,BluetoothActivity::class.java)
+        val paramIntent = Intent(this, BluetoothActivity::class.java)
         val contactIntent = Intent(this,BluetoothActivity::class.java)
         val mentionIntent = Intent(this,BluetoothActivity::class.java)
         val deconnexionIntent = Intent(this,BluetoothActivity::class.java)
