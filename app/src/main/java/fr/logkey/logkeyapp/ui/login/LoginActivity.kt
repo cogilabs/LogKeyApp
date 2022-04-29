@@ -13,7 +13,7 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
-import fr.logkey.logkeyapp.BluetoothActivity
+import fr.logkey.logkeyapp.ble.BluetoothActivity
 import fr.logkey.logkeyapp.databinding.ActivityLoginBinding
 
 import fr.logkey.logkeyapp.R
