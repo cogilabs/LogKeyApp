@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TimePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import fr.logkey.logkeyapp.MenuHambActivity
 import fr.logkey.logkeyapp.R
 import kotlinx.android.synthetic.main.activity_ma_chambre.*
 import java.util.*
@@ -65,6 +66,11 @@ class MaChambreActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
         val intent4 = Intent(this,MonCompteActivity::class.java)
         userButton.setOnClickListener {
             startActivity(intent4)
+        }
+
+        val intent5 = Intent(this, MenuHambActivity::class.java)
+        menuButton.setOnClickListener {
+            startActivity(intent5)
         }
         pickDate()
         switch1.setOnCheckedChangeListener{_, isChecked ->

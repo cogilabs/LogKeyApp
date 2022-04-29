@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import fr.logkey.logkeyapp.MenuHambActivity
 import fr.logkey.logkeyapp.R
 import fr.logkey.logkeyapp.accueil.AccueilActivity
 import fr.logkey.logkeyapp.accueil.MaReservationActivity
@@ -58,7 +59,7 @@ class MenuPressingActivity : AppCompatActivity() {
             startActivity(intent4)
         }
 
-        val intent5 = Intent(this, NotificationsActivity::class.java)
+        val intent5 = Intent(this, MenuHambActivity::class.java)
         menuButton.setOnClickListener {
             startActivity(intent5)
         }

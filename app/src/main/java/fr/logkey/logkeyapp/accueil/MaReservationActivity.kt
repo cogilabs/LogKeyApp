@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import fr.logkey.logkeyapp.MenuHambActivity
 import fr.logkey.logkeyapp.R
 
 class MaReservationActivity : AppCompatActivity() {
@@ -45,7 +46,7 @@ class MaReservationActivity : AppCompatActivity() {
             startActivity(intent4)
         }
 
-        val intent5 = Intent(this, NotificationsActivity::class.java)
+        val intent5 = Intent(this, MenuHambActivity::class.java)
         menuButton.setOnClickListener {
             startActivity(intent5)
         }

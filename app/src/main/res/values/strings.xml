@@ -151,6 +151,7 @@
     <string name="bienvenue_sur">Bienvenue sur LOG\'KEY</string>
     <string name="arriereplanaccueil">arrierePlanAccueil</string>
     <string name="logoaccueil">logoAccueil</string>
+
     <string name="play">play</string>
     <string name="ble_device_status_connecting">Statut : connexion</string>
     <string name="ble_device_status_disconnecting">statut : déconnexion</string>
@@ -166,6 +167,7 @@
     <string name="ble_device_characteristic_read" />
     <string name="ble_characteristic_read">LECTURE</string>
     <string name="ble_characterisitc_write">ECRITURE</string>
+
 
 </resources>
 

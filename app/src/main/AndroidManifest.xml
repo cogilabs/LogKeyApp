@@ -17,8 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LogKeyApp">
         <activity
+
             android:name=".ble.DeviceDetailActivity"
             android:exported="false" />
+
 
         <activity
             android:name=".ble.BleScanActivity"

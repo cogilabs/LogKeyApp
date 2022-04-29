@@ -92,7 +92,7 @@ class MonCompteActivity : AppCompatActivity() {
             startActivity(intent4)
         }
 
-        val intent5 = Intent(this, NotificationsActivity::class.java)
+        val intent5 = Intent(this, MenuHambActivity::class.java)
         menuButton.setOnClickListener {
             startActivity(intent5)
         }
