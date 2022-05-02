@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "712568991606",
+    "project_id": "fir-log-key",
+    "storage_bucket": "fir-log-key.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712568991606:android:be5810878c907149a39457",
+        "android_client_info": {
+          "package_name": "fr.logkey.logkeyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712568991606-m2rouqpofh71hukd2ff2k353ko1uis86.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.logkey.logkeyapp",
+            "certificate_hash": "bd5a391696e3d449559cf23b898c165ab785486b"
+          }
+        },
+        {
+          "client_id": "712568991606-h57j8s765j825neee4e28j12n8k0q1dk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuYiCdL16XxY6tZPNmvVOHV-JRugMo1Bc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712568991606-h57j8s765j825neee4e28j12n8k0q1dk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -155,8 +155,8 @@
     <string name="mentionsLegales">Mentions Légales</string>
     <string name="deconnexion">Déconnexion</string>
     <string name="titleMenu">LOG\'KEY</string>
-    
- 
+
+
     <string name="play">play</string>
     <string name="ble_device_status_connecting">Statut : connexion</string>
     <string name="ble_device_status_disconnecting">statut : déconnexion</string>
@@ -174,3 +174,4 @@
     <string name="ble_characterisitc_write">ECRITURE</string>
 
 </resources>
+

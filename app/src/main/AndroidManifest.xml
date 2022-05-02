@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.logkey.logkeyapp">
+
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,11 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LogKeyApp">
         <activity
-
+            android:name=".ui.login.EmailPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".ble.DeviceDetailActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".ble.BleScanActivity"
             android:exported="false" />
@@ -123,10 +124,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />
