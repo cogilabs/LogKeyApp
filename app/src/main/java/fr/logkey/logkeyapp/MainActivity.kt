@@ -3,7 +3,7 @@ package fr.logkey.logkeyapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import fr.logkey.logkeyapp.ui.login.LoginActivity
+import fr.logkey.logkeyapp.ui.login.EmailPasswordActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     private  fun goToLogin(login: String){
-        val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, EmailPasswordActivity::class.java)
         intent.putExtra("login", login)
         startActivity(intent)
     }
