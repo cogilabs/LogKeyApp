@@ -17,8 +17,11 @@ class BluetoothActivity : AppCompatActivity() {
         boutonGoBlePage = findViewById(R.id.checkIn)
         val intent = Intent(this, BleScanActivity::class.java)
 
+
         boutonGoBlePage.setOnClickListener{
             startActivity(intent)
+            finish()
+
         }
     }
 }

@@ -1,8 +1,7 @@
+package fr.logkey.logkeyapp
+
 import android.content.Intent
 import android.net.Uri
-import fr.logkey.logkeyapp.R
-
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,18 +11,18 @@ import fr.logkey.logkeyapp.accueil.MaReservationActivity
 import fr.logkey.logkeyapp.accueil.MonCompteActivity
 import fr.logkey.logkeyapp.accueil.NotificationsActivity
 
+class ContactActivity : AppCompatActivity() {
 
-class ContactUrgentActivity : AppCompatActivity() {
     lateinit var bellButton : ImageView
     lateinit var bagButton : ImageView
     lateinit var homeButton : ImageView
     lateinit var userButton : ImageView
     lateinit var menuButton : ImageView
     lateinit var boutonTelephoneTaxi: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_contacts_urgent)
-
+        setContentView(R.layout.activity_contact)
         boutonTelephoneTaxi = findViewById(R.id.icone_telephone)
 
         boutonTelephoneTaxi.setOnClickListener {
@@ -67,4 +66,5 @@ class ContactUrgentActivity : AppCompatActivity() {
         telephoneIntent.data = Uri.parse("tel:" + "33672240680")
         startActivity(telephoneIntent)
     }
+
 }

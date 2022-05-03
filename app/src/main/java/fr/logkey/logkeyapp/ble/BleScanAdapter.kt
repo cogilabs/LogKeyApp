@@ -27,7 +27,9 @@ internal class BleScanAdapter(val bleList: ArrayList<ScanResult>, val clickListe
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BLEViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.device, parent, false)
+
         return BLEViewHolder(itemView)
+
     }
 
     @SuppressLint("MissingPermission")
@@ -53,6 +55,7 @@ internal class BleScanAdapter(val bleList: ArrayList<ScanResult>, val clickListe
             bleList.add(scanResult)
             //  notifyItemInserted(bleList.size -1)
         }
+
     }
 
     override fun getItemCount(): Int {

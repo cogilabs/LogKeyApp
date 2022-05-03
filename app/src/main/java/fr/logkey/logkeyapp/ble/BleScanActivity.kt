@@ -32,6 +32,7 @@ class BleScanActivity : AppCompatActivity() {
         val bluetoothManager = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
         bluetoothManager.adapter
 
+
     }
     private fun startLeScanBLEWithPermission(enable: Boolean){
         if (checkAllPermissionGranted()) {
@@ -93,10 +94,13 @@ class BleScanActivity : AppCompatActivity() {
             val intent = Intent ( this, DeviceDetailActivity::class.java)
             intent.putExtra(DEVICE_KEY, it)
             startActivity(intent)
+            finish()
         }
         binding.scanBLEListe.layoutManager = LinearLayoutManager(this)
 
         binding.scanBLEListe.adapter = adapter
+
+
 
 
     }

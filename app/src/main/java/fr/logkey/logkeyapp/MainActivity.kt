@@ -16,5 +16,6 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, EmailPasswordActivity::class.java)
         intent.putExtra("login", login)
         startActivity(intent)
+        finishAffinity()
     }
 }

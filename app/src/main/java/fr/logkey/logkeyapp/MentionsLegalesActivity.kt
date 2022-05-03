@@ -1,4 +1,4 @@
-package fr.isen.dauchy.applogkey
+package fr.logkey.logkeyapp
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,7 @@ import fr.logkey.logkeyapp.accueil.MaReservationActivity
 import fr.logkey.logkeyapp.accueil.MonCompteActivity
 import fr.logkey.logkeyapp.accueil.NotificationsActivity
 
-class MentionsLegales : AppCompatActivity() {
+class MentionsLegalesActivity : AppCompatActivity() {
     lateinit var bellButton : ImageView
     lateinit var bagButton : ImageView
     lateinit var homeButton : ImageView
