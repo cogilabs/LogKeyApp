@@ -21,28 +21,10 @@
         android:contentDescription="TODO" />
 
     <TextView
-        android:id="@+id/parametres"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:background="#DCCDC1"
-        android:clickable="true"
-        android:fontFamily="@font/mada_medium"
-        android:paddingStart="10dp"
-        android:paddingTop="10dp"
-        android:text="@string/param"
-        android:textColor="#25201D"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        android:focusable="true" />
-
-    <TextView
         android:id="@+id/contact"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:background="#DCCDC1"
         android:clickable="true"
         android:fontFamily="@font/mada_medium"
@@ -52,8 +34,9 @@
         android:textColor="#25201D"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parametres" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/mentionsLeg"

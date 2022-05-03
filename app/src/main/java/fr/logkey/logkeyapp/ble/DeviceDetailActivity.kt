@@ -49,6 +49,7 @@ class DeviceDetailActivity : AppCompatActivity() {
         val checkIntent : Intent = Intent(this, CheckInActivity::class.java)
         checkInBtn.setOnClickListener {
             startActivity(checkIntent)
+            finish()
         }
     }
 

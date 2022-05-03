@@ -9,7 +9,7 @@ import fr.logkey.logkeyapp.accueil.AccueilActivity
 
 class CheckInActivity : AppCompatActivity() {
     lateinit var boutonOpeningMsg : Button
-    lateinit var accueiBtn : Button
+    lateinit var accueilBtn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +25,12 @@ class CheckInActivity : AppCompatActivity() {
             }
         })
 
-        accueiBtn = findViewById(R.id.accueilBtn)
+        accueilBtn = findViewById(R.id.accueilBtn)
         val intent = Intent(this, AccueilActivity::class.java)
 
-        accueiBtn.setOnClickListener{
+        accueilBtn.setOnClickListener{
             startActivity(intent)
+            finish()
         }
 
 
