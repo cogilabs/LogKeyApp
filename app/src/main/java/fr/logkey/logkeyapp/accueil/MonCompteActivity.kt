@@ -39,6 +39,7 @@ class MonCompteActivity : AppCompatActivity() {
         val intentVersInfosPersonnelles: Intent = Intent(this, InformationsPersonnellesActivity::class.java)
         val intentVersDocumentsDeVoyage: Intent = Intent(this, DocumentsDeVoyageActivity::class.java)
         val intentVersMesMoyensDePaiement: Intent = Intent(this, MesMoyensDePaiementActivity::class.java)
+        val intentVersChangementDeMotDePasse: Intent = Intent(this, ModificationMDP::class.java)
         val intentVersMaFacture: Intent = Intent(this, MaFactureActivity::class.java)
         val intentVersMesCommandesEnCours: Intent = Intent(this, MesCommandesEnCoursActivity::class.java)
         val intentVersCommandesTerminees: Intent = Intent(this, MesCommandesTermineesActivity::class.java)
@@ -53,7 +54,7 @@ class MonCompteActivity : AppCompatActivity() {
             startActivity(intentVersMesMoyensDePaiement)
         }
         boutonVersChangementDeMotDePasse.setOnClickListener {
-            Toast.makeText(applicationContext,"Option indisponible pour le moment.", Toast.LENGTH_SHORT).show()
+            startActivity(intentVersChangementDeMotDePasse)
         }
         boutonVersMaFacture.setOnClickListener {
             startActivity(intentVersMaFacture)
