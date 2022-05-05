@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
@@ -17,6 +18,7 @@ import fr.logkey.logkeyapp.accueil.AccueilActivity
 import fr.logkey.logkeyapp.accueil.MaReservationActivity
 import fr.logkey.logkeyapp.accueil.MonCompteActivity
 import fr.logkey.logkeyapp.accueil.NotificationsActivity
+
 
 
 class InformationsPersonnellesActivity : AppCompatActivity() {
@@ -36,14 +38,25 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
     lateinit var menuButton : ImageView
 
     //Initialisation variable pour firebase firestore
+
     var db: FirebaseFirestore? = FirebaseFirestore.getInstance()
+    private lateinit var auth: FirebaseAuth
+    private lateinit var uid : String
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_informations_personnelles)
 
+
+
         //DataBase
         userName = findViewById(R.id.nom)
+        auth = FirebaseAuth.getInstance()
+        uid = auth.currentUser?.uid.toString()
 
 
         //Toolbar
@@ -54,9 +67,10 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
         menuButton = findViewById(R.id.menu)
 
         //Création de variable pour la référence du doc dans la bdd
-        val documentReference = db!!.collection("Client").document("1GJn4a4efqD8pztWQhoQ")
 
-        // adding snapshot listener to our document reference.
+        val documentReference = db!!.collection("Users").document(uid)
+
+
         // adding snapshot listener to our document reference.
         documentReference.addSnapshotListener(object : EventListener<DocumentSnapshot?> {
             override fun onEvent(
@@ -75,7 +89,7 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
                 if (value != null && value.exists()) {
                     // if th value from firestore is not null then we are getting
                     // our data and setting that data to our text view.
-                    userName.text = value.data!!["surname"].toString()
+                    userName.text = value.data!!["userSurname"].toString()
                 }
             }
         })
@@ -106,5 +120,8 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
         menuButton.setOnClickListener {
             startActivity(intent5)
         }
+
+
     }
+
 }
