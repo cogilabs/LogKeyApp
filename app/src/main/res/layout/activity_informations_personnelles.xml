@@ -53,7 +53,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo">
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/adresseDomicile2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/mada"
+            android:text="@string/adresse"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/domicileTxt"
+            app:layout_constraintTop_toBottomOf="@+id/adresses" />
 
         <LinearLayout
             android:id="@+id/linearLayout4"
@@ -63,7 +77,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" >
+            app:layout_constraintTop_toTopOf="parent">
 
         </LinearLayout>
 
@@ -118,7 +132,7 @@
             android:fontFamily="@font/mada"
             android:text="@string/nom"
             android:textColor="#000000"
-            android:textSize="13sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/infosPersonnelles" />
 
@@ -126,12 +140,12 @@
             android:id="@+id/prenom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/mada"
             android:text="@string/pr_nom"
             android:textColor="#000000"
-            android:textSize="13sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/nom"
@@ -141,28 +155,28 @@
             android:id="@+id/dateDeNaissance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/mada"
             android:text="@string/date_de_naissance"
             android:textColor="#000000"
-            android:textSize="13sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.154"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/nom"
             app:layout_constraintTop_toBottomOf="@+id/nom" />
 
         <TextView
             android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/mada"
             android:text="@string/e_mail"
             android:textColor="#000000"
-            android:textSize="13sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.128"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/dateDeNaissance"
             app:layout_constraintTop_toBottomOf="@+id/dateDeNaissance" />
 
         <TextView
@@ -174,7 +188,7 @@
             android:fontFamily="@font/mada_medium"
             android:text="@string/personnel"
             android:textColor="#000000"
-            android:textSize="13sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numDeTel" />
 
@@ -187,7 +201,7 @@
             android:fontFamily="@font/mada_medium"
             android:text="@string/domicile"
             android:textColor="#000000"
-            android:textSize="13sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/adresses" />
 
@@ -200,7 +214,7 @@
             android:fontFamily="@font/mada"
             android:text="@string/_0654321001"
             android:textColor="#000000"
-            android:textSize="13sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/personnelTxt"
             app:layout_constraintTop_toBottomOf="@+id/numDeTel" />
 
@@ -213,11 +227,30 @@
             android:fontFamily="@font/mada"
             android:text="@string/adresse"
             android:textColor="#000000"
-            android:textSize="13sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/domicileTxt"
             app:layout_constraintTop_toBottomOf="@+id/adresses" />
 
+        <TextView
+            android:id="@+id/codePostal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adressecodePostal"
+            android:textColor="#0E0A0A"
+            app:layout_constraintStart_toStartOf="@+id/adresseDomicile2"
+            app:layout_constraintTop_toBottomOf="@+id/adresseDomicile2" />
+
+        <TextView
+            android:id="@+id/ville"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adresseVille"
+            android:textColor="#130A0A"
+            app:layout_constraintStart_toStartOf="@+id/adresseDomicile2"
+            app:layout_constraintTop_toBottomOf="@+id/codePostal" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
         android:id="@+id/rectangleTb"
         android:layout_width="0dp"

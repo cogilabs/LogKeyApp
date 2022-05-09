@@ -104,7 +104,7 @@
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.194"
+            app:layout_constraintHorizontal_bias="0.059"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/documentDIdentite" />
 
@@ -112,7 +112,7 @@
             android:id="@+id/typeDeDocumentIdentite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/mada"
             android:text="@string/carte_identit"
@@ -125,8 +125,8 @@
             android:id="@+id/numeroIdentite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/mada"
             android:text="@string/x4rtbpfw4"
             android:textColor="#000000"
@@ -138,14 +138,14 @@
             android:id="@+id/numIdentiteTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/mada_medium"
             android:text="@string/num_ro_d_identit"
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.204"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/typeDocumentTxt"
             app:layout_constraintTop_toBottomOf="@+id/typeDocumentTxt" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

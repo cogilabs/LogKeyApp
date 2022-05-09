@@ -63,10 +63,10 @@
     <string name="petit_dejeuner">Petit Déjeuner</string>
     <string name="logo">logo</string>
     <string name="document_d_identit">Document d\'identité</string>
-    <string name="type_de_document">Type de Document</string>
+    <string name="type_de_document">Type de Document :</string>
     <string name="carte_identit">Carte Identité</string>
     <string name="x4rtbpfw4">X4RTBPFW4</string>
-    <string name="num_ro_d_identit">Numéro d\'identité</string>
+    <string name="num_ro_d_identit">Numéro d\'identité :</string>
     <string name="nom">Nom</string>
     <string name="num_ros_de_t_l_phone">Numéros de téléphone</string>
     <string name="pr_nom">Prénom</string>
@@ -173,6 +173,8 @@
     <string name="ble_characterisitc_write">ECRITURE</string>
     <string name="modification_de_mot_de_passe">Modification de mot de passe</string>
 
+    <string name="adresseVille">Ville</string>
+    <string name="adressecodePostal">Code Postal</string>
 
 </resources>
 
