@@ -29,6 +29,8 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
     lateinit var userEmail : TextView
     lateinit var userPhone : TextView
     lateinit var userPostalAddress : TextView
+    lateinit var userPostalCode : TextView
+    lateinit var userCity : TextView
 
     //Variables ToolBar
     lateinit var bellButton : ImageView
@@ -38,7 +40,6 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
     lateinit var menuButton : ImageView
 
     //Initialisation variable pour firebase firestore
-
     var db: FirebaseFirestore? = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
     private lateinit var uid : String
@@ -54,7 +55,15 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
 
 
         //DataBase
-        userName = findViewById(R.id.nom)
+        userSurname = findViewById(R.id.nom)
+        userName = findViewById(R.id.prenom)
+        userBirthDate  = findViewById(R.id.dateDeNaissance)
+        userEmail = findViewById(R.id.email)
+        userPhone = findViewById(R.id.numPerso)
+        userPostalAddress = findViewById(R.id.adresseDomicile)
+        userPostalCode = findViewById(R.id.codePostal)
+        userCity = findViewById(R.id.ville)
+
         auth = FirebaseAuth.getInstance()
         uid = auth.currentUser?.uid.toString()
 
@@ -66,8 +75,8 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
         userButton = findViewById(R.id.user)
         menuButton = findViewById(R.id.menu)
 
-        //Création de variable pour la référence du doc dans la bdd
 
+        //Création de variable pour la référence du doc dans la bdd
         val documentReference = db!!.collection("Users").document(uid)
 
 
@@ -89,7 +98,15 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
                 if (value != null && value.exists()) {
                     // if th value from firestore is not null then we are getting
                     // our data and setting that data to our text view.
-                    userName.text = value.data!!["userSurname"].toString()
+                    userSurname.text = value.data!!["userSurname"].toString()
+                    userName.text = value.data!!["userFirstName"].toString()
+                   // userBirthDate.text = value.data!!["date_of_birth"].toString()
+                    userEmail.text = value.data!!["email"].toString()
+                    userPhone.text = value.data!!["telephone"].toString()
+                    userPostalAddress.text = value.data!!["address"].toString()
+                    userPostalCode.text = value.data!!["code_postal"].toString()
+                    userCity.text = value.data!!["city"].toString()
+
                 }
             }
         })
