@@ -12,7 +12,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import fr.logkey.logkeyapp.CheckInActivity
 import fr.logkey.logkeyapp.R
 import fr.logkey.logkeyapp.ble.BluetoothActivity
 
@@ -89,7 +88,7 @@ class EmailPasswordActivity : AppCompatActivity() {
     private fun majInfoUser() {
        // val intent = Intent(this@EmailPasswordActivity, BluetoothActivity::class.java)
         //Pour test décommenter la ligne suivante
-        val intent = Intent(this@EmailPasswordActivity, CheckInActivity::class.java)
+        val intent = Intent(this@EmailPasswordActivity, BluetoothActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()

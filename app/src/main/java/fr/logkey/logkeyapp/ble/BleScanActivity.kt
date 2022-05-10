@@ -1,5 +1,6 @@
 package fr.logkey.logkeyapp.ble
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
@@ -22,32 +23,65 @@ import fr.logkey.logkeyapp.databinding.ActivityBleScanBinding
 class BleScanActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBleScanBinding
+
+    private var isScanning = false
     private val ENABLE_BLUETOOTH_REQUEST_CODE = 1
-    private val ALL_PERMISSION_REQUEST_CODE = 100
-    private var scanning = false
-    private var adapter: BleScanAdapter? = null
+    private val ALL_PERMISSION_REQUEST_CODE = 10
+    private lateinit var adapter: BleScanAdapter
 
 
     private val bluetoothAdapter: BluetoothAdapter? by lazy {
         val bluetoothManager = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
         bluetoothManager.adapter
-
-
     }
-    private fun startLeScanBLEWithPermission(enable: Boolean){
-        if (checkAllPermissionGranted()) {
-            startLeScanBLE(enable)
-        }else{
-            ActivityCompat.requestPermissions(this, getAllPermissions() ,ALL_PERMISSION_REQUEST_CODE)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_ble_scan)
+
+        binding = ActivityBleScanBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        when {
+            bluetoothAdapter?.isEnabled == true ->
+                binding.scanBLEBtn.setOnClickListener {
+                    startLeScanBLEWithPermission(!isScanning)
+                    // startLeScanBLEWithPermission(true)
+                }
+
+            bluetoothAdapter != null ->
+                askBluetoohPermission()
+            else -> {
+                displayBLEUnavailable()
+            }
+
         }
+
+        binding.scanBLEBtn.setOnClickListener {
+            startLeScanBLEWithPermission(!isScanning)
+        }
+        binding.scanBLEText.setOnClickListener {
+            startLeScanBLEWithPermission(!isScanning)
+        }
+
+        adapter = BleScanAdapter(arrayListOf()) {
+            val intent = Intent(this, TransitionCheckInActivity::class.java)
+            intent.putExtra(DEVICE_KEY, it)
+            startActivity(intent)
+        }
+        binding.scanBLEListe.layoutManager = LinearLayoutManager(this)
+        binding.scanBLEListe.adapter = adapter
+
     }
+
 
     private fun checkAllPermissionGranted(): Boolean {
         return getAllPermissions().all { permission ->
-            ActivityCompat.checkSelfPermission(
+            val test = ActivityCompat.checkSelfPermission(
                 this,
                 permission
             ) == PackageManager.PERMISSION_GRANTED
+            return@all test
         }
     }
 
@@ -66,87 +100,64 @@ class BleScanActivity : AppCompatActivity() {
     }
 
 
-    @SuppressLint("SetTextI18n")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private fun startLeScanBLEWithPermission(enable: Boolean) {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION // si on a bien activé la localisation
+            ) == PackageManager.PERMISSION_GRANTED //ok
+        ) {
+            startLeScanBLE(enable)
+        } else {
+            ActivityCompat.requestPermissions(
+                this, arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.BLUETOOTH_CONNECT, //connexion (android 12)
+                    Manifest.permission.BLUETOOTH_SCAN //scan (android 12)
 
-        binding = ActivityBleScanBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+                ), ALL_PERMISSION_REQUEST_CODE
+            )
 
-        when {
-            bluetoothAdapter?.isEnabled == true ->
-                startLeScanBLEWithPermission(true)
-            bluetoothAdapter != null ->
-                askBluetoothPermission()
-            else -> {
-                displayBLEUnAvailable()
-            }
         }
-        binding.scanBLEBtn.setOnClickListener {
-            val test = scanning
-
-            startLeScanBLEWithPermission(!scanning)
-        }
-        binding.scanBLEText.setOnClickListener {
-            startLeScanBLEWithPermission(!scanning)
-        }
-        adapter= BleScanAdapter(arrayListOf()) {
-            val intent = Intent ( this, DeviceDetailActivity::class.java)
-            intent.putExtra(DEVICE_KEY, it)
-            startActivity(intent)
-            finish()
-        }
-        binding.scanBLEListe.layoutManager = LinearLayoutManager(this)
-
-        binding.scanBLEListe.adapter = adapter
-
-
-
-
     }
-
-    override fun onStop(){
-        super.onStop()
-        startLeScanBLEWithPermission(false)
-    }
-
 
 
     @SuppressLint("MissingPermission")
     private fun startLeScanBLE(enable: Boolean) {
 
         bluetoothAdapter?.bluetoothLeScanner?.apply {
-            if(enable) {
-                scanning = true
-                startScan(scanCallback)
+            if (enable) {
+                isScanning = true
+                startScan(scanCallBack)
             } else {
-                scanning = false
-                stopScan(scanCallback)
+                isScanning = false
+                stopScan(scanCallBack)
             }
-            scanToggle()
+            handlePlayPauseAction()
         }
     }
 
-    private val scanCallback = object: ScanCallback() {
+
+    private val scanCallBack = object : ScanCallback() {
         override fun onScanResult(callbackType: Int, result: ScanResult) {
-            Log.d("BLEScanActivity", "result: ${result.device.address}, rssi : ${result.rssi}")
+            Log.d("BLEScanActivity", "result : ${result?.device?.address}, rssi : ${result?.rssi}")
+
             adapter?.apply {
-                addResultToBleList(result)
+                addElement(result)
                 notifyDataSetChanged()
             }
 
         }
     }
 
-    private fun displayBLEUnAvailable() {
+    private fun displayBLEUnavailable() {
         binding.scanBLEBtn.isVisible = false
-        binding.scanBLEText.text = getString(R.string.ble_scan_device_error)
-        binding.scanBLEPogressBar.isVisible = false
+        binding.scanBLEText.text = getString(R.string.ble_scan_error)
+        binding.scanBLEPogressBar.isIndeterminate = false
     }
 
-    private fun askBluetoothPermission(){
+    private fun askBluetoohPermission() {
         val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-        if(ActivityCompat.checkSelfPermission(
+        if (ActivityCompat.checkSelfPermission(
                 this,
                 android.Manifest.permission.BLUETOOTH_CONNECT
             ) == PackageManager.PERMISSION_GRANTED
@@ -155,23 +166,24 @@ class BleScanActivity : AppCompatActivity() {
         }
     }
 
-
-
-
-    private fun scanToggle() {
-        if (!scanning) {
-            binding.scanBLEText.text = "Lancer le scan"
-            binding.scanBLEBtn.setImageResource(R.drawable.ic_play)
-            binding.scanBLEPogressBar.visibility = View.INVISIBLE
-        } else {
-            binding.scanBLEText.text = "Scan en cours..."
+    private fun handlePlayPauseAction() {
+        if (isScanning) {
             binding.scanBLEBtn.setImageResource(R.drawable.ic_pause)
-            binding.scanBLEPogressBar.visibility = View.VISIBLE
+            binding.scanBLEText.text = getString(R.string.ble_scan_pause)
+            binding.scanBLEPogressBar.isIndeterminate = true
+            binding.scanBLEPogressBar.isVisible = true
+        } else {
+            binding.scanBLEBtn.setImageResource(R.drawable.ic_play)
+            binding.scanBLEText.text = getString(R.string.ble_scan_play)
+            binding.scanBLEPogressBar.isIndeterminate = true
+            binding.scanBLEPogressBar.isVisible = false
         }
     }
-    companion object
-    {
-        val DEVICE_KEY = "device"
-    }
 
+    companion object {
+        private const val ENABLE_BLUETOOTH_REQUEST_CODE = 1
+        private const val ALL_PEMISSION_REQUEST_CODE = 100
+        const val DEVICE_KEY = "Device"
+    }
 }
+

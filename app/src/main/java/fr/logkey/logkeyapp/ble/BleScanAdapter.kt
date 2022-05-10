@@ -16,6 +16,7 @@ import fr.logkey.logkeyapp.R
 internal class BleScanAdapter(val bleList: ArrayList<ScanResult>, val clickListener: (BluetoothDevice) -> Unit) :
     RecyclerView.Adapter<BleScanAdapter.BLEViewHolder>() {
 
+
     internal inner class BLEViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var blecircle: TextView = view.findViewById(R.id.circle)
         var bledeviceTextView: TextView = view.findViewById(R.id.deviceTextView)
@@ -27,9 +28,7 @@ internal class BleScanAdapter(val bleList: ArrayList<ScanResult>, val clickListe
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BLEViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.device, parent, false)
-
         return BLEViewHolder(itemView)
-
     }
 
     @SuppressLint("MissingPermission")
@@ -44,20 +43,18 @@ internal class BleScanAdapter(val bleList: ArrayList<ScanResult>, val clickListe
         }
     }
 
-    fun addResultToBleList(scanResult: ScanResult){
-        val indexOfResult = bleList.indexOfFirst {
+    fun addElement(scanResult : ScanResult) {
+        val indexOfResult = bleList.indexOfFirst{
             it.device.address == scanResult.device.address
         }
-        if(indexOfResult != -1) {
+        if (indexOfResult != -1) {
             bleList[indexOfResult] = scanResult
-            //  notifyItemChanged(indexOfResult)
-        } else {
-            bleList.add(scanResult)
-            //  notifyItemInserted(bleList.size -1)
+            notifyItemInserted(indexOfResult)
         }
-
+        else{
+            bleList.add(scanResult)
+        }
     }
-
     override fun getItemCount(): Int {
         return bleList.size
     }
