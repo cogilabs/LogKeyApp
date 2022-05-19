@@ -56,19 +56,6 @@
         app:layout_constraintTop_toBottomOf="@+id/logo"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/adresseDomicile2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/mada"
-            android:text="@string/adresse"
-            android:textColor="#000000"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/domicileTxt"
-            app:layout_constraintTop_toBottomOf="@+id/adresses" />
-
         <LinearLayout
             android:id="@+id/linearLayout4"
             android:layout_width="0dp"
@@ -95,19 +82,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/adresses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:fontFamily="@font/mada_semibold"
-            android:text="@string/adresses"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/personnelTxt" />
+
 
         <TextView
             android:id="@+id/numDeTel"
@@ -197,13 +172,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/mada_medium"
             android:text="@string/domicile"
             android:textColor="#000000"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/adresses" />
+            app:layout_constraintTop_toBottomOf="@+id/personnelTxt" />
 
         <TextView
             android:id="@+id/numPerso"
@@ -222,31 +197,37 @@
             android:id="@+id/adresseDomicile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/mada"
             android:text="@string/adresse"
             android:textColor="#000000"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/domicileTxt"
-            app:layout_constraintTop_toBottomOf="@+id/adresses" />
+            app:layout_constraintTop_toBottomOf="@+id/numPerso"
+            tools:text="@string/adresse" />
 
         <TextView
             android:id="@+id/codePostal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/mada"
             android:text="@string/adressecodePostal"
             android:textColor="#0E0A0A"
-            app:layout_constraintStart_toStartOf="@+id/adresseDomicile2"
-            app:layout_constraintTop_toBottomOf="@+id/adresseDomicile2" />
+            app:layout_constraintStart_toEndOf="@+id/domicileTxt"
+            app:layout_constraintTop_toBottomOf="@+id/adresseDomicile" />
 
         <TextView
             android:id="@+id/ville"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/mada"
             android:text="@string/adresseVille"
             android:textColor="#130A0A"
-            app:layout_constraintStart_toStartOf="@+id/adresseDomicile2"
+            app:layout_constraintStart_toEndOf="@+id/domicileTxt"
             app:layout_constraintTop_toBottomOf="@+id/codePostal" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
