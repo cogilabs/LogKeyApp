@@ -87,7 +87,7 @@ class EmailPasswordActivity : AppCompatActivity() {
     }
 
     private fun majInfoUser() {
-       // val intent = Intent(this@EmailPasswordActivity, BluetoothActivity::class.java)
+        //val intent = Intent(this@EmailPasswordActivity, BluetoothActivity::class.java)
         //Pour test décommenter la ligne suivante
         val intent = Intent(this@EmailPasswordActivity, CheckInActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

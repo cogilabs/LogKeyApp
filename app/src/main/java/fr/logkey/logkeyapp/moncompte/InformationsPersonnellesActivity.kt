@@ -1,26 +1,35 @@
 package fr.logkey.logkeyapp.moncompte
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.Nullable
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.firebase.ui.auth.data.model.User
+import com.google.android.gms.common.config.GservicesValue.value
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.firestore.*
 import com.google.firebase.firestore.EventListener
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.type.DateTime
 import fr.logkey.logkeyapp.MenuHambActivity
 import fr.logkey.logkeyapp.R
 import fr.logkey.logkeyapp.accueil.AccueilActivity
 import fr.logkey.logkeyapp.accueil.MaReservationActivity
 import fr.logkey.logkeyapp.accueil.MonCompteActivity
 import fr.logkey.logkeyapp.accueil.NotificationsActivity
+import java.text.SimpleDateFormat
+import java.util.*
 
 
-
+@Suppress("CAST_NEVER_SUCCEEDS")
 class InformationsPersonnellesActivity : AppCompatActivity() {
     //Variables base de données
     lateinit var userName : TextView
@@ -41,10 +50,9 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
 
     //Initialisation variable pour firebase firestore
     var db: FirebaseFirestore? = FirebaseFirestore.getInstance()
+
     private lateinit var auth: FirebaseAuth
     private lateinit var uid : String
-
-
 
 
 
@@ -68,6 +76,9 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
         uid = auth.currentUser?.uid.toString()
 
 
+
+
+
         //Toolbar
         bellButton = findViewById(R.id.bell)
         bagButton = findViewById(R.id.bag)
@@ -82,6 +93,9 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
 
         // adding snapshot listener to our document reference.
         documentReference.addSnapshotListener(object : EventListener<DocumentSnapshot?> {
+
+
+            @RequiresApi(Build.VERSION_CODES.N)
             override fun onEvent(
                 @Nullable value: DocumentSnapshot?,
                 @Nullable error: FirebaseFirestoreException?
@@ -100,7 +114,7 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
                     // our data and setting that data to our text view.
                     userSurname.text = value.data!!["userSurname"].toString()
                     userName.text = value.data!!["userFirstName"].toString()
-                   // userBirthDate.text = value.data!!["date_of_birth"].toString()
+                    userBirthDate.text = getDateFormat(value.data!!["date_of_birth"] as Timestamp?)
                     userEmail.text = value.data!!["email"].toString()
                     userPhone.text = value.data!!["telephone"].toString()
                     userPostalAddress.text = value.data!!["address"].toString()
@@ -109,7 +123,15 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
 
                 }
             }
+
+
+
+
+
+
         })
+
+
 
         val intent1 = Intent(this, NotificationsActivity::class.java)
         bellButton.setOnClickListener {
@@ -141,4 +163,33 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
 
     }
 
+
+ @SuppressLint("SimpleDateFormat")
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun getDateFormat(s: Timestamp?): String {
+     val timestamp = s as Timestamp
+     val milliseconds = timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000
+     val sdf = SimpleDateFormat("dd/MM/yyyy")
+     val netDate = Date(milliseconds)
+     val date = sdf.format(netDate).toString()
+     println(date)
+     return date
+
+    }
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
