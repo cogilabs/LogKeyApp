@@ -12,9 +12,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import fr.logkey.logkeyapp.CheckInActivity
+import fr.logkey.logkeyapp.OpeningLockerActivity
 import fr.logkey.logkeyapp.R
 import fr.logkey.logkeyapp.accueil.AccueilActivity
 import fr.logkey.logkeyapp.databinding.ActivityDeviceDetailBinding
@@ -27,9 +25,12 @@ class DeviceDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDeviceDetailBinding
     private var bluetoothGatt: BluetoothGatt? = null
     private var timer: Timer? = null
-    lateinit var checkInBtn : Button
+    private lateinit var adapter: BleServiceAdapter
 
-
+    lateinit var boutonOpeningMsg : Button
+    lateinit var accueilBtn : Button
+    val fm = supportFragmentManager
+    val openingLocker = OpeningLockerActivity()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -39,18 +40,33 @@ class DeviceDetailActivity : AppCompatActivity() {
 
         val device = intent.getParcelableExtra<BluetoothDevice?>(BleScanActivity.DEVICE_KEY)
         Toast.makeText(this, device?.address, Toast.LENGTH_SHORT).show()
-        binding.deviceName.text = device?.name ?: "Nom inconnu"
-        binding.deviceStatus.text = getString(R.string.ble_device_disconnected)
-        binding.checkInBtn.isEnabled =false
+        //binding.deviceName.text = device?.name ?: "Nom inconnu"
+        //binding.deviceStatus.text = getString(R.string.ble_device_disconnected)
 
+        openingLocker.show(fm, "game")
         connectToDevice(device)
 
-        checkInBtn = findViewById(R.id.checkInBtn)
-        val checkIntent : Intent = Intent(this, CheckInActivity::class.java)
-        checkInBtn.setOnClickListener {
-            startActivity(checkIntent)
+
+
+
+        boutonOpeningMsg = findViewById(R.id.checkIn)
+        /*val fm = supportFragmentManager
+        val openingLocker = OpeningLockerActivity()
+
+
+        boutonOpeningMsg.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(view: View) {
+                openingLocker.show(fm, "game")
+            }
+        })*/
+        accueilBtn = findViewById(R.id.accueilBtn)
+        val intent = Intent(this, AccueilActivity::class.java)
+
+        accueilBtn.setOnClickListener{
+            startActivity(intent)
             finish()
         }
+
     }
 
     override fun onStop() {
@@ -75,19 +91,18 @@ class DeviceDetailActivity : AppCompatActivity() {
             when (newState) {
                 BluetoothGatt.STATE_CONNECTED -> {
                     gatt?.discoverServices()
-                    runOnUiThread { binding.deviceStatus.text = "Connected"
-                        checkInBtn.isEnabled = true
-
+                    runOnUiThread { //binding.deviceStatus.text = "Connected"
+                        openingLocker.dismissAllowingStateLoss()
                     }
-
                 }
                 BluetoothGatt.STATE_CONNECTING -> {
-                    runOnUiThread { binding.deviceStatus.text = "Connection..."
-                        checkInBtn.isEnabled =false }
+                    runOnUiThread {//binding.deviceStatus.text = "Connection..."
+                        //openingLocker.show(fm, "game")
+                    }
                 }
                 else -> {
-                    runOnUiThread { binding.deviceStatus.text = "No connection"
-                        checkInBtn.isEnabled =false }
+                    runOnUiThread {// binding.deviceStatus.text = "No connection"
+                    }
                 }
             }
         }
@@ -96,7 +111,25 @@ class DeviceDetailActivity : AppCompatActivity() {
         override fun onServicesDiscovered(gatt: BluetoothGatt?, status: Int) {
             super.onServicesDiscovered(gatt, status)
 
+            val bleServices =
+                gatt?.services?.map { BleService(it.uuid.toString(), it.characteristics) }
+                    ?: arrayListOf()
+            runOnUiThread {
 
+                adapter = BleServiceAdapter(bleServices,
+                    this@DeviceDetailActivity,
+                    { characteristic -> gatt?.readCharacteristic(characteristic) },
+                    { characteristic -> writeIntoCharacteristic(gatt!!, characteristic) },
+                    { characteristic, enable ->
+                        toggleNotificationOnCharacteristic(
+                            gatt!!,
+                            characteristic,
+                            enable
+                        )
+                    }
+                )
+
+            }
 
             Log.d("BluetoothLeService", "onServicesDiscovered()")
             val gattServices: List<BluetoothGattService> = gatt!!.services
@@ -118,7 +151,8 @@ class DeviceDetailActivity : AppCompatActivity() {
         ) {
             super.onCharacteristicRead(gatt, characteristic, status)
             runOnUiThread {
-
+                adapter.updateFromChangedCharacteristic(characteristic)
+                adapter.notifyDataSetChanged()
             }
         }
 

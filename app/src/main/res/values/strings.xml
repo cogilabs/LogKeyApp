@@ -175,6 +175,7 @@
 
     <string name="adresseVille">Ville</string>
     <string name="adressecodePostal">Code Postal</string>
+    <string name="ble_scan_error">error</string>
 
 </resources>
 

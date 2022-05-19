@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LogKeyApp">
         <activity
+            android:name=".ble.TransitionCheckInActivity"
+            android:exported="false" />
+        <activity
             android:name=".database.UpdateData"
             android:exported="false" />
         <activity
@@ -122,9 +125,6 @@
             android:exported="false" />
         <activity
             android:name=".OpeningLockerActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CheckInActivity"
             android:exported="false" />
         <activity
             android:name=".accueil.MaReservationActivity"
