@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".accueil.NotificationsActivity">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/notifications"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
     <ImageView
         android:id="@+id/rectangleTb"
         android:layout_width="0dp"
@@ -25,6 +16,43 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/rectangle" />
+    <ImageView
+        android:id="@+id/fontHaut"
+        android:layout_width="412dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="-70dp"
+        android:contentDescription="@string/font_haut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hautappli" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/image_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/microsoftteams_image" />
+
+    <TextView
+        android:id="@+id/maChambreView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/mada_bold"
+        android:text="@string/notification_page"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/bell"
@@ -62,6 +90,33 @@
         app:layout_constraintTop_toTopOf="@+id/rectangleTb"
         app:srcCompat="@drawable/house_solid" />
 
+
+    <ImageView
+        android:id="@+id/bubble"
+        android:layout_width="346dp"
+        android:layout_height="67dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/rectangleTb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.043"
+        app:srcCompat="@drawable/chatbubble" />
+
+    <TextView
+            android:id="@+id/msgText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/bubble"
+            app:layout_constraintEnd_toEndOf="@+id/bubble"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="@+id/bubble"
+            app:layout_constraintTop_toTopOf="@+id/bubble"
+            app:layout_constraintVertical_bias="0.448" />
+
+
     <ImageView
         android:id="@+id/user"
         android:layout_width="21dp"
@@ -86,4 +141,5 @@
         app:layout_constraintStart_toStartOf="@+id/rectangleTb"
         app:layout_constraintTop_toTopOf="@+id/rectangleTb"
         app:srcCompat="@drawable/bars_solid" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

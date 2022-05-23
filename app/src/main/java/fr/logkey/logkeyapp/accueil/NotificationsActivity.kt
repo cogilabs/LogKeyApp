@@ -6,21 +6,36 @@ import android.os.Bundle
 import android.widget.ImageView
 import fr.logkey.logkeyapp.MenuHambActivity
 import fr.logkey.logkeyapp.R
+import fr.logkey.logkeyapp.databinding.ActivityNotificationsBinding
 
 class NotificationsActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityNotificationsBinding
+  //  private lateinit var items: ArrayList<String>
+
     lateinit var bellButton : ImageView
     lateinit var bagButton : ImageView
     lateinit var homeButton : ImageView
     lateinit var userButton : ImageView
     lateinit var menuButton : ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notifications)
+
         bellButton = findViewById(R.id.bell)
         bagButton = findViewById(R.id.bag)
         homeButton = findViewById(R.id.house)
         userButton = findViewById(R.id.user)
         menuButton = findViewById(R.id.menu)
+
+        binding = ActivityNotificationsBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        val categorieName = intent.getStringExtra("category")
+       // binding.itemsMessage.text = categorieName
+
 
         val intent1 = Intent(this, NotificationsActivity::class.java)
         bellButton.setOnClickListener {

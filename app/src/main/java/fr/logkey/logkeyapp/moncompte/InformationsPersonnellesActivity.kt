@@ -80,6 +80,7 @@ class InformationsPersonnellesActivity : AppCompatActivity() {
         val documentReference = db!!.collection("Users").document(uid)
 
 
+
         // adding snapshot listener to our document reference.
         documentReference.addSnapshotListener(object : EventListener<DocumentSnapshot?> {
             override fun onEvent(
