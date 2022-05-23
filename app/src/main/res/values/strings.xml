@@ -172,7 +172,7 @@
     <string name="ble_characteristic_read">LECTURE</string>
     <string name="ble_characterisitc_write">ECRITURE</string>
     <string name="modification_de_mot_de_passe">Modification de mot de passe</string>
-
+    <string name="notification_page">Notifications</string>
     <string name="adresseVille">Ville</string>
     <string name="adressecodePostal">Code Postal</string>
     <string name="ble_scan_error">error</string>
