@@ -143,3 +143,4 @@
         app:srcCompat="@drawable/bars_solid" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

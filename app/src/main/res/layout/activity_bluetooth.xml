@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="16dp"
-    tools:context=".ui.login.LoginActivity"
+    tools:context=".ui.login.EmailPasswordActivity"
     tools:layout_editor_absoluteX="9dp"
     tools:layout_editor_absoluteY="0dp">
 
@@ -92,7 +92,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:text="SE CONNECTER A LA MACHINE"
-        android:textAlignment="textEnd"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -27,7 +27,7 @@ class DeviceDetailActivity : AppCompatActivity() {
     private var timer: Timer? = null
     private lateinit var adapter: BleServiceAdapter
 
-    lateinit var boutonOpeningMsg : Button
+    //lateinit var boutonOpeningMsg : Button
     lateinit var accueilBtn : Button
     val fm = supportFragmentManager
     val openingLocker = OpeningLockerActivity()
@@ -49,7 +49,7 @@ class DeviceDetailActivity : AppCompatActivity() {
 
 
 
-        boutonOpeningMsg = findViewById(R.id.checkIn)
+       // boutonOpeningMsg = findViewById(R.id.checkIn)
         /*val fm = supportFragmentManager
         val openingLocker = OpeningLockerActivity()
 
